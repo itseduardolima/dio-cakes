@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { MessageCircle, Cake } from "lucide-react";
+import { Cake } from "lucide-react";
 import heroImage1 from "../public/images/hero-img.jpg";
 import heroImage2 from "../public/images/hero-img2.jpg";
 import heroImage3 from "../public/images/hero-img3.jpg";

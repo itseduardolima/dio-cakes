@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Instagram, Facebook, MessageCircle, Cake } from "lucide-react";
+import { Instagram, Cake } from "lucide-react";
 import { WhatsappIcon } from "@/public/icons/whatsappIcon";
 
 interface FooterProps {

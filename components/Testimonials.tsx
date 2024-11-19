@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Star, Cake } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -17,7 +17,7 @@ interface TestimonialsProps {
 interface Testimonial {
   name: string;
   text: string;
-  image: any;
+  image: StaticImageData;
 }
 
 export const Testimonials = ({ isDarkMode }: TestimonialsProps) => {
