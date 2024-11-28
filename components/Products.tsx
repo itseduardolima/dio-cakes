@@ -101,6 +101,16 @@ export function Products({ isDarkMode }: ProductsProps) {
             >
               Kits
             </button>
+            <button
+              onClick={() => setFilter('doces')}
+              className={`px-4 py-2 rounded-full ${
+                filter === 'doces'
+                  ? 'bg-pink-500 text-white'
+                  : 'bg-gray-200 text-gray-800'
+              }`}
+            >
+              Doces
+            </button>
           </div>
           <div className="relative">
             <input
