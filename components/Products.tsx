@@ -60,7 +60,7 @@ export function Products({ isDarkMode }: ProductsProps) {
           Nossos Produtos
         </h2>
         <div className="mb-8 flex flex-col sm:flex-row justify-between items-center">
-          <div className="flex space-x-4 mb-4 sm:mb-0">
+          <div className="flex space-x-6 mb-4 sm:mb-0">
             <button
               onClick={() => setFilter('all')}
               className={`px-4 py-2 rounded-full ${
@@ -81,16 +81,7 @@ export function Products({ isDarkMode }: ProductsProps) {
             >
               Bolos
             </button>
-            <button
-              onClick={() => setFilter('cupcakes')}
-              className={`px-4 py-2 rounded-full ${
-                filter === 'cupcakes'
-                  ? 'bg-pink-500 text-white'
-                  : 'bg-gray-200 text-gray-800'
-              }`}
-            >
-              Cupcakes
-            </button>
+            
             <button
               onClick={() => setFilter('kits')}
               className={`px-4 py-2 rounded-full ${

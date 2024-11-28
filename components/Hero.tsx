@@ -42,7 +42,7 @@ export function Hero({ isDarkMode }: HeroProps) {
             isDarkMode ? "text-gray-200" : "text-gray-800"
           } font-bold mb-4 font-script`}
         >
-          Bolos, CupCakes e Kits para festa
+          Bolos, Doces e Kits para festa
         </h1>
         <p
           className={`text-xl ${
