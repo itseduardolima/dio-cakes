@@ -6,6 +6,8 @@ import { Search } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { mockProducts } from '@/mock/products'
+import { Button } from './ui/button'
+
 
 interface ProductsProps {
   isDarkMode: boolean
@@ -33,6 +35,7 @@ export function Products({ isDarkMode }: ProductsProps) {
 
   const [filter, setFilter] = useState('all')
   const [searchTerm, setSearchTerm] = useState('')
+  const [visibleProducts, setVisibleProducts] = useState(6)
 
   const filteredProducts = useMemo(() => {
     return mockProducts.filter(
@@ -41,6 +44,12 @@ export function Products({ isDarkMode }: ProductsProps) {
         product.name.toLowerCase().includes(searchTerm.toLowerCase())
     )
   }, [filter, searchTerm])
+
+  const displayedProducts = filteredProducts.slice(0, visibleProducts)
+
+  const loadMore = () => {
+    setVisibleProducts((prev) => Math.min(prev + 6, filteredProducts.length))
+  }
 
   return (
     <motion.section
@@ -60,7 +69,7 @@ export function Products({ isDarkMode }: ProductsProps) {
           Nossos Produtos
         </h2>
         <div className="mb-8 flex flex-col sm:flex-row justify-between items-center">
-          <div className="flex space-x-6 mb-4 sm:mb-0">
+          <div className="flex space-x-4 mb-4 sm:mb-0">
             <button
               onClick={() => setFilter('all')}
               className={`px-4 py-2 rounded-full ${
@@ -81,7 +90,6 @@ export function Products({ isDarkMode }: ProductsProps) {
             >
               Bolos
             </button>
-            
             <button
               onClick={() => setFilter('kits')}
               className={`px-4 py-2 rounded-full ${
@@ -120,7 +128,7 @@ export function Products({ isDarkMode }: ProductsProps) {
           animate={inView ? 'animate' : 'initial'}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {filteredProducts.map((product) => (
+          {displayedProducts.map((product) => (
             <motion.div
               key={product.id}
               variants={fadeInUp}
@@ -169,6 +177,16 @@ export function Products({ isDarkMode }: ProductsProps) {
             </motion.div>
           ))}
         </motion.div>
+        {visibleProducts < filteredProducts.length && (
+          <div className="mt-8 flex justify-center">
+            <Button
+              onClick={loadMore}
+              className="bg-pink-500 text-white hover:bg-pink-600"
+            >
+              Ver mais
+            </Button>
+          </div>
+        )}
       </div>
     </motion.section>
   )
