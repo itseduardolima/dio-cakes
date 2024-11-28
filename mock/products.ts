@@ -189,16 +189,6 @@ export const mockProducts: Product[] = [
     image: bolo6,
     category: "bolos",
   },
-
-  {
-    id: "18",
-    name: "Bolo Azul Metalizado 88 Anos",
-    description:
-      "Bolo elegante em degradê azul e prata com acabamento metalizado. Decorado com balões cromados e topper personalizado celebrando 88 anos. Base com babado delicado em tons de azul.",
-    icon: Cake,
-    image: boloAzul,
-    category: "bolos",
-  },
   {
     id: "19",
     name: "Kit Feliz Páscoa Premium",
